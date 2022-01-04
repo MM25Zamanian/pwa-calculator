@@ -13,6 +13,17 @@ export const routes: Route[] = [
     },
   },
   {
+    path: '/calculator',
+    name: 'calc',
+    label: 'Calculator',
+    icon: 'calculate',
+    show_on_nav: true,
+    component: 'page-calculator',
+    action: async () => {
+      await import('../pages/page-calculator.js');
+    },
+  },
+  {
     path: '/about',
     name: 'about',
     label: 'About Us',

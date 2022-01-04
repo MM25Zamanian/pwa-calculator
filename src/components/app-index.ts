@@ -102,7 +102,7 @@ export class AppIndex extends LitElement {
       .desktop-forbidden .title {
         color: #fff;
         font-weight: 100;
-        font-size: 4rem;
+        font-size: 3rem;
         transition: text-shadow 300ms ease;
       }
 

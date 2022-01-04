@@ -68,6 +68,7 @@ LICENSE file in the root directory of this source tree.
       body {
         margin: 0;
         font-family: 'Varela Round', 'Roboto', sans-serif;
+        background-color: var(--mdc-theme);
         /* font-family: 'Licorice', cursive;
         font-family: 'Shizuru', cursive; */
       }
@@ -78,8 +79,9 @@ LICENSE file in the root directory of this source tree.
       }
 
       :root {
-        --mdc-theme-primary: #127e3b;
+        --mdc-theme-primary: #df5600;
         --mdc-theme-on-primary: #ffffff;
+        --mdc-theme: #eee;
         --mdc-icon-font: 'Material Icons Round';
         --mdc-typography-font-family: 'Varela Round', 'Roboto', sans-serif;
 
@@ -89,11 +91,13 @@ LICENSE file in the root directory of this source tree.
         --mdc-circular-progress-bar-color-2: var(--mdc-circular-progress-bar);
         --mdc-circular-progress-bar-color-3: var(--mdc-circular-progress-bar);
         --mdc-circular-progress-bar-color-4: var(--mdc-circular-progress-bar);
+
+        --button-size: 72px;
       }
     </style>
   </head>
 
-  <body>
+  <body class="dark">
     <app-index></app-index>
 
     <noscript>Please enable JavaScript to view this website.</noscript>
