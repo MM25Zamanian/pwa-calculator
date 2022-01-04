@@ -5,7 +5,7 @@ export const routes: Route[] = [
     path: '/',
     name: 'home',
     label: 'Home',
-    icon: '',
+    icon: 'home',
     show_on_nav: true,
     component: 'page-home',
     action: async () => {
@@ -15,8 +15,8 @@ export const routes: Route[] = [
   {
     path: '/about',
     name: 'about',
-    label: 'Home',
-    icon: '',
+    label: 'About Us',
+    icon: 'info',
     show_on_nav: true,
     component: 'page-about',
     action: async () => {
