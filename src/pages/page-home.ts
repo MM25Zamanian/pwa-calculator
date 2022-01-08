@@ -49,8 +49,7 @@ export class PageHome extends PageElement {
 
   meta() {
     return {
-      title: config.appName,
-      titleTemplate: null,
+      title: 'home',
       description: config.appDescription,
     };
   }
