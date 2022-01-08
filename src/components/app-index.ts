@@ -67,6 +67,10 @@ export class AppIndex extends LitElement {
         flex-direction: column;
       }
 
+      main {
+        min-height: calc(100vh - 56px);
+      }
+
       main,
       main > * {
         display: flex;

@@ -11,16 +11,19 @@ import '@material/mwc-ripple';
 @customElement('calc-button-component')
 export class CalcButton extends LitElement {
   @property({ type: Number })
-  protected level = 1;
+  public level = 1;
 
   @property()
-  protected type: 'normal' | 'scondary' | 'primary' = 'normal';
+  public type: 'normal' | 'secondary' | 'primary' = 'normal';
 
   @property()
-  protected label = '';
+  public value!: '+' | '-' | '*' | '/';
+
+  @property()
+  public label = '';
 
   @query('mwc-ripple')
-  protected ripple!: Ripple;
+  public ripple!: Ripple;
 
   static styles = [
     unsafeCSS(reboot),
