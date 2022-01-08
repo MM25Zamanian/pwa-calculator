@@ -14,7 +14,7 @@ import merge from 'deepmerge';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const DIST_PATH = 'server/dist/';
-const GENERATE_SERVICE_WORKER = false;
+const GENERATE_SERVICE_WORKER = true;
 
 const absoluteBaseUrl =
   NODE_ENV === 'production'
@@ -25,7 +25,7 @@ const workboxConfig = {
   sourcemap: false,
   runtimeCaching: [
     {
-      urlPattern: /images\/.*$/,
+      urlPattern: new RegExp('\\/images\\/.*$'),
       handler: 'CacheFirst',
       options: {
         cacheName: 'images',
@@ -35,9 +35,64 @@ const workboxConfig = {
         },
       },
     },
+    {
+      urlPattern: new RegExp('\\/fonts\\/.*$'),
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'fonts',
+        expiration: {
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        },
+      },
+    },
+    {
+      urlPattern: new RegExp('\\/api\\/.*$'),
+      handler: 'StaleWhileRevalidate',
+      options: {
+        cacheName: 'api',
+        expiration: {
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        },
+      },
+    },
+    {
+      urlPattern: new RegExp('^\\/(.*)\\.js$'),
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'scripts',
+        expiration: {
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        },
+      },
+    },
+    {
+      urlPattern: new RegExp('^\\/(.*)\\.webmanifest$'),
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'manifest',
+        expiration: {
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        },
+      },
+    },
+    {
+      urlPattern: new RegExp('^\\/'),
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'route',
+        expiration: {
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        },
+      },
+    },
   ],
-  skipWaiting: false,
-  clientsClaim: false,
+  skipWaiting: true,
+  clientsClaim: true,
 };
 
 const config = merge(
