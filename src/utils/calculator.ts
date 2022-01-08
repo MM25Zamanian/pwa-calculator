@@ -1,6 +1,6 @@
 export type operator = '+' | '-' | '*' | '/';
 export type other_actions = '=' | 'ac' | 'c';
-export const operatorRegex = new RegExp(/^[\\*\\+\\-\\/]{1}$/);
+export const operatorRegex = new RegExp(/^[\\*\\+\-\\/]{1}$/);
 
 export default class Calculator {
   public results_list: (operator | number)[] = [];
@@ -71,7 +71,7 @@ export default class Calculator {
       return undefined;
     }
 
-    this.results_list = [eval(this.results_list.join(' '))];
+    this.results_list = [Function(`return ${this.results_list.join(' ')}`)()];
 
     this.onchange();
 
