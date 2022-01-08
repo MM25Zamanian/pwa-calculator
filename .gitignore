@@ -1,3 +1,7 @@
-node_modules/
-server/dist/
-yarn-error.log
+# Logs
+*.log*
+
+# Build
+dist
+node_modules
+package-lock.json

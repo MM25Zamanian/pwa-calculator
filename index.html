@@ -1,19 +1,18 @@
 <!--
 Copyright (c) IBM, Corp. and its affiliates.
-
 This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>MyApplication</title>
-    <meta name="description" content="MyApplication description" />
+    <title>Calculator</title>
+    <meta name="description" content="Calculator description" />
 
     <base href="/" />
 
@@ -25,26 +24,31 @@ LICENSE file in the root directory of this source tree.
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="MyApplication" />
+    <meta name="apple-mobile-web-app-title" content="Calculator" />
 
     <link rel="apple-touch-icon" href="images/manifest/icon-192x192.png" />
 
     <link rel="canonical" href="/" />
 
-    <meta property="og:title" content="MyApplication" />
-    <meta property="og:description" content="MyApplication description" />
+    <meta property="og:title" content="Calculator" />
+    <meta property="og:description" content="Calculator description" />
     <meta property="og:image" content="/images/open-graph/cover.png" />
-    <meta property="og:image:alt" content="MyApplication logo" />
+    <meta property="og:image:alt" content="Calculator logo" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
     <meta property="og:url" content="/" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons+Round&display=block"
+      rel="stylesheet"
     />
 
     <link
@@ -63,16 +67,37 @@ LICENSE file in the root directory of this source tree.
 
       body {
         margin: 0;
-        font-family: 'IBM Plex Sans', sans-serif;
+        font-family: 'Varela Round', 'Roboto', sans-serif;
+        background-color: var(--mdc-theme);
+        /* font-family: 'Licorice', cursive;
+        font-family: 'Shizuru', cursive; */
       }
 
       noscript {
         display: block;
         margin: 1em;
       }
+
+      :root {
+        --mdc-theme-primary: #df5600;
+        --mdc-theme-on-primary: #ffffff;
+        --mdc-theme: #eee;
+        --mdc-icon-font: 'Material Icons Round';
+        --mdc-typography-font-family: 'Varela Round', 'Roboto', sans-serif;
+
+        --mdc-circular-progress-bar: #ffffff;
+
+        --mdc-circular-progress-bar-color-1: var(--mdc-circular-progress-bar);
+        --mdc-circular-progress-bar-color-2: var(--mdc-circular-progress-bar);
+        --mdc-circular-progress-bar-color-3: var(--mdc-circular-progress-bar);
+        --mdc-circular-progress-bar-color-4: var(--mdc-circular-progress-bar);
+
+        --button-size: 72px;
+      }
     </style>
   </head>
-  <body>
+
+  <body class="dark">
     <app-index></app-index>
 
     <noscript>Please enable JavaScript to view this website.</noscript>

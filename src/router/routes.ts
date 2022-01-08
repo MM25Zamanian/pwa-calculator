@@ -5,7 +5,7 @@ export const routes: Route[] = [
     path: '/',
     name: 'home',
     label: 'Home',
-    icon: '',
+    icon: 'home',
     show_on_nav: true,
     component: 'page-home',
     action: async () => {
@@ -13,10 +13,21 @@ export const routes: Route[] = [
     },
   },
   {
+    path: '/calculator',
+    name: 'calc',
+    label: 'Calculator',
+    icon: 'calculate',
+    show_on_nav: true,
+    component: 'page-calculator',
+    action: async () => {
+      await import('../pages/page-calculator.js');
+    },
+  },
+  {
     path: '/about',
     name: 'about',
-    label: 'Home',
-    icon: '',
+    label: 'About Us',
+    icon: 'info',
     show_on_nav: true,
     component: 'page-about',
     action: async () => {

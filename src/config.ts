@@ -7,6 +7,6 @@
 
 export default {
   environment: 'development',
-  appName: 'MyApplication',
-  appDescription: 'MyApplication description',
+  appName: 'Calculator',
+  appDescription: 'Calculator description',
 };

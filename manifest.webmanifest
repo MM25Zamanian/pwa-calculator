@@ -1,7 +1,7 @@
 {
-  "name": "MyApplication",
-  "short_name": "MyApp",
-  "description": "MyApplication description",
+  "name": "Calculator",
+  "short_name": "Gecut Calc",
+  "description": "Calculator description",
   "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "theme_color": "#000000",

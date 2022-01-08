@@ -1,28 +1,32 @@
 {
-  "name": "pwa-lit-template",
-  "version": "0.1.0",
+  "name": "pwa-calculator",
+  "version": "1.0.0",
   "private": true,
   "description": "A template for building Progressive Web Applications using Lit and Vaadin Router",
   "license": "MIT",
-  "repository": "https://github.com/mm25zamanian/pwa-lit-starter.git",
+  "repository": "https://github.com/mm25zamanian/pwa-calculator.git",
   "author": "MohammadMahdi Zamanian <mm25zamanian@gmail.com>",
   "main": "lib/index.js",
   "bin": {
-    "pwa-lit-template": "./bin/run"
+    "pwa-calculator": "./bin/run"
   },
   "engines": {
     "node": ">=14.0.0"
   },
   "scripts": {
+    "b": "yarn build",
     "build": "rimraf server/dist/ && rollup --config",
+    "f": "yarn format",
     "format": "npm-run-all format:*",
     "format:eslint": "npm run lint:eslint -- --fix",
     "format:prettier": "prettier . --ignore-path .gitignore --write",
     "format:stylelint": "npm run lint:stylelint -- --fix",
+    "l": "yarn lint",
     "lint": "npm-run-all --parallel lint:*",
     "lint:eslint": "eslint . --ignore-path .gitignore",
     "lint:stylelint": "stylelint src/{components,pages}/**/*.ts --ignore-path .gitignore",
     "prepare": "husky install",
+    "s": "yarn serve",
     "serve": "web-dev-server --watch",
     "start": "npm run serve",
     "test": "echo \"Error: no test specified\"",
@@ -36,6 +40,7 @@
     "@material/mwc-icon": "^0.25.3",
     "@material/mwc-icon-button": "^0.25.3",
     "@material/mwc-list": "^0.25.3",
+    "@material/mwc-ripple": "^0.25.3",
     "@material/mwc-top-app-bar": "^0.25.3",
     "@vaadin/router": "^1.7.4",
     "lit": "^2.0.2",
